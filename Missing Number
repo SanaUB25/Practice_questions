@@ -1,0 +1,12 @@
+class arraysss{
+    public int missingNumber(int[] nums) {
+        int imp = 0;
+        int imp2 = 0;
+        for(int i =0;i<=nums.length;i++){
+            imp+=i; }
+        for(int j =0 ; j<nums.length;j++){
+            imp2+=nums[j];}
+        int sol = imp-imp2;
+        return sol;
+    }
+}
