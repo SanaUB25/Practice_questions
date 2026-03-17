@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class arraysss{
+    public static void main (String[] args){
+        Scanner scanner = new Scanner (System.in);
+        System.out.println("Enter the no of elements in an array :");
+        int x = scanner.nextInt();
+        int[] arr = new int[x];
+        System.out.println("Enter the elements of the Array :");
+        for (int i = 0; i < x; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        int y = arr[0];
+        int imp=0;
+        for (int i = 0; i < x; i++){
+            if (y<arr[i]) {
+                imp = y;
+                y = arr[i];
+            }}
+
+        System.out.println("The second greatest number is:"+imp);
+
+
+
+        }
+
+
+
+
+    }
