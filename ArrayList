@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+class arraysss{
+    public static  void main (String[] args){
+
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(67);
+        arr.add(18);
+        arr.add(22);
+        System.out.println(arr.get(2));
+
+        arr.set(0,88);
+        System.out.println(arr);
+
+        for (int i =0; i<arr.size();i++){
+            System.out.print(arr.get(i));
+            System.out.print(" ");
+
+        }
+        System.out.println();
+        for (int ele : arr){
+        System.out.println(ele);
+
+    }
+        arr.remove(arr.size()-1);
+        arr.add(1,56);
+
+        System.out.println();
+        for (int ele : arr){
+            System.out.println(ele);
+
+    }
+        Collections.reverse(arr);
+
+        int i=0, j=arr.size()-1 ;
+        while(i<j){
+            int temp = arr.get(i);
+            arr.set(i,arr.get(j));
+            arr.set(i,temp);
+            i++;
+            j--;
+
+
+        }
+        System.out.println(arr);
+
+    }
+
+}
+
