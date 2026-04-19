@@ -1,0 +1,80 @@
+public class BinarySearch {
+    public static void main (String[] args) {
+        int[] arr = {0, 1, 2, 3, 4, 48};
+        int target = 3  ;
+        binarySearchOrderAgnostic(arr, target);
+    }
+//        int sol = binarySearchDesc(arr, target);
+//        if (sol != -1) {
+//            System.out.println("The element " + target + "is on the index of " + sol);
+//        } else {
+//            System.out.println("Element not found");
+//        }
+//
+//        int sol1 = binarySearchAsc(arr, target);
+//        if (sol1 != -1) {
+//            System.out.println("The element " + target + "is on the index of " + sol);
+//        } else {
+//            System.out.println("Element not found");
+//        }
+    static void binarySearchOrderAgnostic(int[] arr,int target) {
+
+        if (arr[0] < arr[arr.length - 1]) {
+            int sol1 = binarySearchAsc(arr, target);
+            if (sol1 != -1) {
+                System.out.println("The element " + target + "is on the index of " + sol1);
+            } else {
+                System.out.println("Element not found");
+            }
+
+
+        } else {
+            int sol = binarySearchDesc(arr, target);
+            if (sol != -1) {
+                System.out.println("The element " + target + "is on the index of " + sol);
+            } else {
+                System.out.println("Element not found");
+            }
+        }
+
+    }
+    static int binarySearchDesc(int[] arr,int target){
+        int first = 0;
+        int last = arr.length-1;
+        while(first<=last) {
+            int mid = first + (last - first) / 2;
+            if (arr[mid] == target) {
+                return mid;
+
+            }
+            if (target < arr[mid]) {
+                first = mid + 1;
+
+            } else if (target > arr[mid]) {
+                last = mid - 1;
+            }
+
+        }
+
+        return -1;
+    }
+        static int binarySearchAsc(int[] arr,int target){
+            int first = 0;
+            int last = arr.length-1;
+            while(first<=last) {
+                int mid = first + (last - first) / 2;
+                if (arr[mid] == target) {
+                    return mid;
+
+                }
+                if (target > arr[mid]) {
+                    first = mid + 1;
+
+                } else if (target < arr[mid]) {
+                    last = mid - 1;
+                }
+
+            }
+return -1;
+}}
+
