@@ -1,0 +1,22 @@
+public static int BinarySearchfloor(int[] nums, int target) {
+               int first = 0;
+               int ans = -1;
+               int last = nums.length - 1;
+               while (first <= last) {
+                   int mid = first + (last - first) / 2;
+                   if (nums[mid] == target) {
+                       ans = nums[mid];
+                       break;
+                   }
+                   if (target > nums[mid]) {
+                       first = mid + 1;
+                       ans = nums[mid];
+
+                   } else if (target < nums[mid]) {
+                       last = mid - 1;
+                   }
+
+               }
+
+               return ans;
+           }
