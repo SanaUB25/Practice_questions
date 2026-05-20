@@ -1,0 +1,40 @@
+static int allocateminpages( int[] books, int students){
+            int start = Integer.MIN_VALUE;
+            int end = 0;
+            int total = 0;
+int res = -1;
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+                for (int i = 0; i < books.length; i++) {
+                    if (start < books[i]) {
+                        start = books[i];
+                    }
+                    end += books[i];
+                }
+                if (isAllocateTrue(mid, students, books)) {
+                    res = mid;
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+
+            }
+return res ;
+        }
+        static boolean isAllocateTrue ( int mid, int students, int[] books){
+            int candidate = 1;
+            int pages = 0;
+
+            for (int i = 0; i < books.length; i++) {
+                pages += books[i];
+                if (pages > mid) {
+                    candidate++;
+                    pages = books[i];
+                }
+                if (candidate > students) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
